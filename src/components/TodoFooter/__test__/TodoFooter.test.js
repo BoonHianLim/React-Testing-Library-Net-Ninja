@@ -10,25 +10,36 @@ const MockTodoFooter = ({numberOfIncompleteTasks}) => {
     )
 }
 
-it('Should render the correct amount of incomplete tasks', async () => {
-    render(
-        <MockTodoFooter
-            numberOfIncompleteTasks={5}
-        />
-    );
-    const paragraphElement = screen.getByText(/5 tasks left/i);
-    expect(paragraphElement).toBeInTheDocument();
-});
+describe("TodoFooter", () => {
 
-it('Should render "task" when the number of incomplete tasks is one', async () => {
-    render(
-        <MockTodoFooter
-            numberOfIncompleteTasks={1}
-        />
-    );
-    const paragraphElement = screen.getByText(/1 task left/i);
-    expect(paragraphElement).toBeInTheDocument();
-});
+    describe("Functionality 1", () => {
+        it('Should render the correct amount of incomplete tasks', async () => {
+            render(
+                <MockTodoFooter
+                    numberOfIncompleteTasks={5}
+                />
+            );
+            const paragraphElement = screen.getByText(/5 tasks left/i);
+            expect(paragraphElement).toBeInTheDocument();
+        });
+    })
+
+
+    describe("Functionality 2", () => {
+        it('Should render "task" when the number of incomplete tasks is one', async () => {
+            render(
+                <MockTodoFooter
+                    numberOfIncompleteTasks={1}
+                />
+            );
+            const paragraphElement = screen.getByText(/1 task left/i);
+            expect(paragraphElement).toBeInTheDocument();
+        });
+    })
+
+})
+
+/*
 
 it('Should render "task" when the number of incomplete tasks is one', async () => {
     render(
@@ -105,3 +116,4 @@ it('Should render "task" when the number of incomplete tasks is one', async () =
     expect(paragraphElement.textContent).toBe("1 task left");
     expect(paragraphElement.textContent).toBe("1 task left");
 });
+*/
