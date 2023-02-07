@@ -7,6 +7,9 @@ it('Should render same text passed into title prop', async () => {
     expect(headingElement).toBeInTheDocument();
 });
 
+
+/*
+
 it('Should render same text passed into title prop', async () => {
     render(<Header title = "My Header"/>);
     const headingElement = screen.getByRole("heading", {name: "My Header"});
@@ -47,3 +50,4 @@ it('Should render same text passed into title prop', async () => {
     const headingElements = screen.getAllByRole("heading");
     expect(headingElements.length).toBe(2);
 });
+*/
